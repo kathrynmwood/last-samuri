@@ -1,20 +1,25 @@
-var samuris = [];
+function lastSamurai(numSamurai) {
 
-for (var i = 1; i <= 100; i++) {
-  samuris.push("samuri " + i);
-}
+  var samurai = [];
 
-while (samuris.length > 1) {
-    kill(samuris);
+  for (var i = 1; i <= numSamurai; i++) {
+    samurai.push("samurai " + i);
   }
 
-function kill(array) {
-  var firstSamuri = array[0];
-  array.push(array[0]);
-  array.splice(0,2);
+  while (samurai.length > 1) {
+      kill(samurai);
+    }
+
+  function kill(array) {
+    array.push(array[0]);
+    array.splice(0,2);
+  }
+
+  return samurai;
+
 }
 
-console.log("Last samuri standing is ", samuris);
+console.log(lastSamurai(100));
 
 
 // var samuriMurderCircle = function(numberOfSamuri){
